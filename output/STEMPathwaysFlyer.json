@@ -2,13 +2,18 @@
     "title": "Parsippany -Troy Hills STEM Pathways",
     "outline": [
         {
-            "level": "H2",
+            "level": "H3",
             "text": "Goals:",
             "page": 0
         },
         {
-            "level": "H1",
+            "level": "H3",
             "text": "PATHWAY OPTIONS",
+            "page": 0
+        },
+        {
+            "level": "H3",
+            "text": "REGULAR PATHWAY DISTINCTION PATHWAY",
             "page": 0
         },
         {
@@ -18,12 +23,22 @@
         },
         {
             "level": "H3",
-            "text": "Science and Other",
+            "text": "Science Math Computer Science/ Art Applied",
             "page": 1
         },
         {
             "level": "H2",
             "text": "What Colleges Say!",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "When asked the question, “Would participation in the Drew University: “Yes,it would show that they are",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "For more information and our application please visit our website by clicking here.",
             "page": 1
         }
     ]

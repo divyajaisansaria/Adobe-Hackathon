@@ -1,4 +1,10 @@
 {
     "title": "Application form for grant of LTC advance",
-    "outline": []
+    "outline": [
+        {
+            "level": "H1",
+            "text": "Date",
+            "page": 0
+        }
+    ]
 }

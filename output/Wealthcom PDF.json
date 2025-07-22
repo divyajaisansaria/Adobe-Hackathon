@@ -1,8 +1,13 @@
 {
-    "title": "MUTUAL FUND INSIGHT",
+    "title": "",
     "outline": [
         {
             "level": "H2",
+            "text": "MUTUAL FUND INSIGHT",
+            "page": 0
+        },
+        {
+            "level": "H3",
             "text": "BY WEALTHCON",
             "page": 0
         },
@@ -12,28 +17,88 @@
             "page": 0
         },
         {
-            "level": "H1",
-            "text": "MUTUAL FUND INSIGHT",
-            "page": 0
+            "level": "H3",
+            "text": "“’SUCCESS IN MARKET IS A PRODUCT OF THREE THINGS:",
+            "page": 1
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "(1) COURAGE (2) COGNITION (3) CAPITAL",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "WEALTHCON Forum shall give you COURAGE &",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "COGNITION’’",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "- Dr Ram",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "This document is a compilation of repeatedly asked topics and articles related to mutual funds, which",
+            "page": 2
+        },
+        {
+            "level": "H3",
+            "text": "How to use this document?",
+            "page": 2
+        },
+        {
+            "level": "H3",
             "text": "Table of Contents",
             "page": 3
         },
         {
-            "level": "H1",
+            "level": "H3",
             "text": "ABOUT THE WEALTHCON",
             "page": 8
         },
         {
-            "level": "H2",
+            "level": "H3",
+            "text": "What is WEALTHCON? Is it NGO? Is it medical association?",
+            "page": 8
+        },
+        {
+            "level": "H3",
+            "text": "*Officially, Wealthcon is a registered brand under Trademark Act*.",
+            "page": 8
+        },
+        {
+            "level": "H3",
+            "text": "10 COMMANDMENTS OF WEALTHCON",
+            "page": 9
+        },
+        {
+            "level": "H1",
             "text": "1. You shall *NOT buy Insurance products for Investment.*",
             "page": 9
         },
         {
             "level": "H1",
-            "text": "10 COMMANDMENTS OF WEALTHCON",
+            "text": "2. You shall *NOT buy Regular plans of Mutual funds. Buy only Direct plans.*",
+            "page": 9
+        },
+        {
+            "level": "H3",
+            "text": "3.You shall *NOT buy shares on tips of paid TV or media analyst.*",
+            "page": 9
+        },
+        {
+            "level": "H1",
+            "text": "4. You shall *NOT sell shares at loss in market crash, in fact buy more shares.*",
+            "page": 9
+        },
+        {
+            "level": "H1",
+            "text": "5. You shall *NOT evade taxes, but save taxes legally.*",
             "page": 9
         },
         {
@@ -42,168 +107,983 @@
             "page": 9
         },
         {
-            "level": "H3",
+            "level": "H1",
             "text": "7. You shall *study finance regularly and become self-reliant.*",
             "page": 9
         },
         {
-            "level": "H3",
+            "level": "H1",
             "text": "8. You shall *teach children financial education.*",
             "page": 9
         },
         {
             "level": "H1",
+            "text": "9. You shall *share financial knowledge with friends.*",
+            "page": 9
+        },
+        {
+            "level": "H3",
+            "text": "10.You shall be *financially independent at Retirement.*",
+            "page": 9
+        },
+        {
+            "level": "H3",
             "text": "EVOLUTION of Share Market investors",
             "page": 10
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Following are 6 steps:",
+            "page": 10
+        },
+        {
+            "level": "H3",
+            "text": "Dr Ram",
+            "page": 10
+        },
+        {
+            "level": "H3",
             "text": "THE SUMMARY",
             "page": 11
         },
         {
             "level": "H1",
+            "text": "5. ELSS FUNDS are large cap tax savings funds with lock in of 3 years- best tax saving instrument",
+            "page": 11
+        },
+        {
+            "level": "H3",
+            "text": "Happy investing.",
+            "page": 11
+        },
+        {
+            "level": "H3",
             "text": "Ch.1 MUTUAL FUND BASICS",
             "page": 12
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "What is a mutual fund?",
+            "page": 12
+        },
+        {
+            "level": "H3",
+            "text": "Dr Ram",
+            "page": 12
+        },
+        {
+            "level": "H3",
+            "text": "Types of Mutual Funds",
+            "page": 13
+        },
+        {
+            "level": "H3",
+            "text": "Who should invest in mutual funds?",
+            "page": 13
+        },
+        {
+            "level": "H3",
+            "text": "Plans and Options to buy a mutual fund scheme.",
+            "page": 14
+        },
+        {
+            "level": "H3",
+            "text": "How much duration is long term in share market?",
+            "page": 14
+        },
+        {
+            "level": "H3",
+            "text": "However, we at WEALTHCON teach 7 years as long term for investment in Shares and Equity Mutual",
+            "page": 14
+        },
+        {
+            "level": "H3",
+            "text": "It has been proven in studies that market gives positive return after 7 years, even if bought shares at",
+            "page": 14
+        },
+        {
+            "level": "H3",
+            "text": "> 7 years Horizon: Buy Equity and Real estate",
+            "page": 15
+        },
+        {
+            "level": "H3",
             "text": "Ch.2 TERMINOLOGIES",
             "page": 16
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "What is NAV of a mutual fund",
+            "page": 16
+        },
+        {
+            "level": "H3",
+            "text": "What is AUM? What is its significance?",
+            "page": 16
+        },
+        {
+            "level": "H3",
+            "text": "What is Exit Load?",
+            "page": 16
+        },
+        {
+            "level": "H3",
+            "text": "What is Expense ratio?",
+            "page": 16
+        },
+        {
+            "level": "H3",
+            "text": "Open ended vs closed ended mutual fund schemes?",
+            "page": 16
+        },
+        {
+            "level": "H3",
+            "text": "What is NFO? Should we invest in NFO? Should I invest?",
+            "page": 17
+        },
+        {
+            "level": "H3",
+            "text": "What are sectoral/thematic mutual fund?",
+            "page": 17
+        },
+        {
+            "level": "H3",
+            "text": "What is a direct plan vs Regular plan of a mutual fund?",
+            "page": 17
+        },
+        {
+            "level": "H3",
+            "text": "What is Alpha and Beta of a mutual fund scheme?",
+            "page": 17
+        },
+        {
+            "level": "H3",
+            "text": "A simple way to apply alpha and beta are",
+            "page": 17
+        },
+        {
+            "level": "H3",
+            "text": "What is Sharpe ratio?",
+            "page": 18
+        },
+        {
+            "level": "H3",
+            "text": "What is SWP /STP?",
+            "page": 18
+        },
+        {
+            "level": "H3",
             "text": "Ch.3 MUTUAL FUNDS FAQs",
             "page": 19
         },
         {
             "level": "H1",
+            "text": "Q. What is the best time to start investing in mutual funds?",
+            "page": 19
+        },
+        {
+            "level": "H1",
+            "text": "Q. Should I invest lump sum or via SIP",
+            "page": 19
+        },
+        {
+            "level": "H1",
+            "text": "Q. How is dividend plan different from growth?",
+            "page": 19
+        },
+        {
+            "level": "H1",
+            "text": "Q. Should we invest in children funds?",
+            "page": 19
+        },
+        {
+            "level": "H1",
+            "text": "Q. Can we invest for minor in MF?",
+            "page": 20
+        },
+        {
+            "level": "H1",
+            "text": "Q. Why Large- Midcap, Multicap & International funds are not considered by experts?",
+            "page": 20
+        },
+        {
+            "level": "H3",
+            "text": "Q Can NRI invest in MF?",
+            "page": 20
+        },
+        {
+            "level": "H3",
+            "text": "Q How many types of mutual funds should I invest?",
+            "page": 20
+        },
+        {
+            "level": "H3",
+            "text": "Wealthcon prescription for a long term passive investor for wealth creation:",
+            "page": 20
+        },
+        {
+            "level": "H1",
+            "text": "Q. If I want to invest for 6-12 months then which is better -",
+            "page": 21
+        },
+        {
+            "level": "H3",
+            "text": "liquid fund or Equity Arbitrage fund?",
+            "page": 21
+        },
+        {
+            "level": "H1",
+            "text": "Q. What is CONTRA fund?",
+            "page": 21
+        },
+        {
+            "level": "H1",
+            "text": "Q. Are mutual funds safer than investing in stocks? What are advantages/disadvantages",
+            "page": 21
+        },
+        {
+            "level": "H3",
+            "text": "of mutual funds over direct stock investing?",
+            "page": 21
+        },
+        {
+            "level": "H1",
+            "text": "Q. So huge Mutual fund investment should not be done even if it is direct??",
+            "page": 21
+        },
+        {
+            "level": "H1",
+            "text": "Q. What should rs do? Can they invest in stocks also? Beginne",
+            "page": 22
+        },
+        {
+            "level": "H3",
+            "text": "After reading above message, some members may get swayed that whether to invest in Mutual funds",
+            "page": 22
+        },
+        {
+            "level": "H1",
+            "text": "Q. I have received lump sum money, I want to invest into mutual funds. How to do it?",
+            "page": 22
+        },
+        {
+            "level": "H3",
             "text": "Ch.4 NAV – NET ASSET VALUE FAQ",
             "page": 23
         },
         {
             "level": "H1",
+            "text": "Q. “Why NAV of “Direct mutual fund “is higher than “Regular Fund?",
+            "page": 23
+        },
+        {
+            "level": "H3",
+            "text": "Q: Does NAV value for purchase of Mutual funds affect the returns? If one mf having",
+            "page": 23
+        },
+        {
+            "level": "H3",
+            "text": "NAV 156 and other having 560 which we should select?",
+            "page": 23
+        },
+        {
+            "level": "H3",
             "text": "Ch.5 HOW TO SELECT BEST MUTUAL FUNDS?",
             "page": 25
         },
         {
+            "level": "H3",
+            "text": "For applying CAARE criteria , Go to valueresearchonline.com",
+            "page": 25
+        },
+        {
+            "level": "H3",
+            "text": "*Take home message*",
+            "page": 26
+        },
+        {
+            "level": "H3",
+            "text": "How much to invest in each category?",
+            "page": 26
+        },
+        {
+            "level": "H3",
+            "text": "Smallcap?",
+            "page": 26
+        },
+        {
             "level": "H1",
+            "text": "Q. Should we add international funds to our portfolio for diversification?",
+            "page": 26
+        },
+        {
+            "level": "H1",
+            "text": "Q. Any additional criteria rather than CAARE for inclusion or exclusion of MF's?",
+            "page": 27
+        },
+        {
+            "level": "H3",
             "text": "Ch.6 INDEX MUTUAL FUNDS AND ETFS",
             "page": 28
         },
         {
+            "level": "H3",
+            "text": "Index mutual funds",
+            "page": 28
+        },
+        {
+            "level": "H3",
+            "text": "Exchange traded funds (ETF)",
+            "page": 28
+        },
+        {
+            "level": "H3",
+            "text": "What are Nifty bees?",
+            "page": 28
+        },
+        {
+            "level": "H3",
+            "text": "What's the difference between index fund and nifty bees?",
+            "page": 29
+        },
+        {
+            "level": "H3",
+            "text": "Is it advised to invest in index funds?",
+            "page": 29
+        },
+        {
+            "level": "H3",
+            "text": "How to choose best index funds? Is there any criteria like CAARE?",
+            "page": 29
+        },
+        {
             "level": "H1",
+            "text": "Q. Does same selecting criteria apply to ETFs like mutual funds?",
+            "page": 29
+        },
+        {
+            "level": "H1",
+            "text": "Q. What will be the taxation on Nifty bees and Gold bees and Liquid bees?",
+            "page": 29
+        },
+        {
+            "level": "H1",
+            "text": "Q. Which funds give more returns? Mutual funds or equity ETF?",
+            "page": 29
+        },
+        {
+            "level": "H1",
+            "text": "Q. Will the brokerage charge for ETF will be same like stocks?",
+            "page": 29
+        },
+        {
+            "level": "H3",
             "text": "Ch.7 DEBT FUNDS",
             "page": 30
         },
         {
+            "level": "H3",
+            "text": "What is DEBT? DEBT from investor point of view.",
+            "page": 30
+        },
+        {
             "level": "H1",
+            "text": "Q. Tax liability towards debt fund?",
+            "page": 30
+        },
+        {
+            "level": "H1",
+            "text": "Q. What is difference between various debt funds? Which one is better among all debt",
+            "page": 30
+        },
+        {
+            "level": "H3",
+            "text": "fund if someone wants to choose?",
+            "page": 30
+        },
+        {
+            "level": "H1",
+            "text": "Q. Can we get regular income from debt funds (for senior citizens)?",
+            "page": 31
+        },
+        {
+            "level": "H3",
+            "text": "SSY sometimes. Why return is so fluctuating?",
+            "page": 31
+        },
+        {
+            "level": "H3",
+            "text": "What are types of risk in Debt Fund?",
+            "page": 31
+        },
+        {
+            "level": "H3",
+            "text": "Q What's credit Risk?",
+            "page": 31
+        },
+        {
+            "level": "H3",
+            "text": "Q What is interest rate risk?",
+            "page": 32
+        },
+        {
+            "level": "H3",
+            "text": "Thumb Rules for DEBT funds’ investments:",
+            "page": 32
+        },
+        {
+            "level": "H1",
+            "text": "Q. How debt funds returns are almost tax free after 3 years, if we apply indexation?",
+            "page": 32
+        },
+        {
+            "level": "H1",
+            "text": "Q. Sir when is the best time to invest in gilt funds?",
+            "page": 32
+        },
+        {
+            "level": "H3",
             "text": "Ch.8 ARBITRAGE FUNDS",
             "page": 34
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "What is an Arbitrage Fund?",
+            "page": 34
+        },
+        {
+            "level": "H3",
+            "text": "Who should invest in arbitrage funds?",
+            "page": 34
+        },
+        {
+            "level": "H3",
+            "text": "Arbitrage funds vs liquid funds vs bank FD",
+            "page": 34
+        },
+        {
+            "level": "H3",
+            "text": "Taxation on Arbitrage funds:",
+            "page": 34
+        },
+        {
+            "level": "H3",
+            "text": "Arbitrage Fund: Investment horizon:",
+            "page": 35
+        },
+        {
+            "level": "H3",
             "text": "Ch.9 DIRECT VS REGULAR PLANS",
             "page": 36
         },
         {
+            "level": "H3",
+            "text": "Regular plans - are sold by distributor/agent, in which they will receive commission from the Asset",
+            "page": 36
+        },
+        {
+            "level": "H3",
+            "text": "EXPENSE RATIO OF DIRECT VS REGULAR",
+            "page": 36
+        },
+        {
             "level": "H1",
+            "text": "Q. Why NAV of direct mutual fund is higher than regular Fund?",
+            "page": 36
+        },
+        {
+            "level": "H1",
+            "text": "Q. Does the advisor continue to receive commission even after stopping the SIP of",
+            "page": 36
+        },
+        {
+            "level": "H3",
+            "text": "regular mutual fund?",
+            "page": 36
+        },
+        {
+            "level": "H1",
+            "text": "Q. Should I switch over from already invested money in regular fund, to direct fund?",
+            "page": 36
+        },
+        {
+            "level": "H3",
+            "text": "Why should we pay more per unit of Direct MF?",
+            "page": 37
+        },
+        {
+            "level": "H3",
+            "text": "Profit is the difference between selling price and buying price .",
+            "page": 37
+        },
+        {
+            "level": "H1",
+            "text": "Q. what is the difference in commission between direct and regular funds?",
+            "page": 38
+        },
+        {
+            "level": "H3",
             "text": "Ch.10 ASSET ALLOCATION",
             "page": 39
         },
         {
+            "level": "H3",
+            "text": "What is asset allocation?",
+            "page": 39
+        },
+        {
+            "level": "H3",
+            "text": "Recommended GRED ratio :",
+            "page": 39
+        },
+        {
+            "level": "H3",
+            "text": "■ ■ Principles of asset allocation",
+            "page": 39
+        },
+        {
+            "level": "H3",
+            "text": "How much to invest in debt and equity oriented funds?",
+            "page": 39
+        },
+        {
             "level": "H1",
+            "text": "Q. If investment horizon is 10 years and plus, Should we rebalance portfolio annually for",
+            "page": 40
+        },
+        {
+            "level": "H3",
+            "text": "maximum return",
+            "page": 40
+        },
+        {
+            "level": "H3",
+            "text": "Q What are the indicators to switch funds?",
+            "page": 40
+        },
+        {
+            "level": "H3",
+            "text": "Q How frequently should we monitor mf portfolio?",
+            "page": 40
+        },
+        {
+            "level": "H3",
             "text": "Ch. 11 MUTUAL FUNDS TAXATION",
             "page": 41
         },
         {
+            "level": "H3",
+            "text": "What are Tax implications on MF redemption/exit?",
+            "page": 41
+        },
+        {
+            "level": "H3",
+            "text": "What is capital gain?",
+            "page": 41
+        },
+        {
+            "level": "H3",
+            "text": "Funds Short-term gain Long-term gain",
+            "page": 41
+        },
+        {
+            "level": "H3",
+            "text": "Calculation of Capital gain tax",
+            "page": 41
+        },
+        {
             "level": "H1",
+            "text": "2. Debt funds and balanced funds (debt-oriented):",
+            "page": 41
+        },
+        {
+            "level": "H1",
+            "text": "3. SIP:",
+            "page": 42
+        },
+        {
+            "level": "H3",
+            "text": "Securities Transaction Tax (STT)",
+            "page": 42
+        },
+        {
+            "level": "H3",
+            "text": "Tax Harvesting? Is it worth?",
+            "page": 42
+        },
+        {
+            "level": "H3",
             "text": "Ch.12 ONLINE PLATFORMS TO BUY DIRECT MUTUAL FUNDS",
             "page": 43
         },
         {
+            "level": "H3",
+            "text": "List of free DIRECT mutual funds platforms and there (dis)advantages:",
+            "page": 43
+        },
+        {
+            "level": "H3",
+            "text": "Q.Is Zerodha and Zerodha coin are one and the same?",
+            "page": 43
+        },
+        {
             "level": "H1",
+            "text": "Q. Any specific advantage in the format of holding of mutual fund? (Demat/ Non demat)",
+            "page": 43
+        },
+        {
+            "level": "H1",
+            "text": "Q. MFU is complicated to use, what to do?",
+            "page": 43
+        },
+        {
+            "level": "H1",
+            "text": "Q. Which platform is recommended?",
+            "page": 43
+        },
+        {
+            "level": "H1",
+            "text": "Q. Why MFU is the preferred platform as of now by Wealthcon?",
+            "page": 44
+        },
+        {
+            "level": "H1",
+            "text": "Q. Which App provides Auto debit facility for SIP in mutual funds?",
+            "page": 44
+        },
+        {
+            "level": "H3",
             "text": "Ch.13 MUTUAL FUND UTILITY (MFU)",
             "page": 45
         },
         {
             "level": "H1",
+            "text": "Q. what is the procedure for making account in MFU?",
+            "page": 45
+        },
+        {
+            "level": "H3",
+            "text": "IMPORTANT LINKS:",
+            "page": 45
+        },
+        {
+            "level": "H1",
+            "text": "Q. What is EPAYEEZE limit of 1 lakh?",
+            "page": 45
+        },
+        {
+            "level": "H1",
+            "text": "Q. How to contact MFU to help opening account?",
+            "page": 45
+        },
+        {
+            "level": "H3",
+            "text": "Q.I have few queries n filling payeez form.",
+            "page": 45
+        },
+        {
+            "level": "H1",
+            "text": "Q. How to track portfolio gain/ loss for MFU? MFU doesn't show that how to track each",
+            "page": 46
+        },
+        {
+            "level": "H3",
+            "text": "fund.",
+            "page": 46
+        },
+        {
+            "level": "H1",
+            "text": "Q. in MFU online, SBI small cap fund and Reliance small cap fund are not available?",
+            "page": 46
+        },
+        {
+            "level": "H1",
+            "text": "Q. Can I increase the ongoing sip amount in MFU?",
+            "page": 46
+        },
+        {
+            "level": "H3",
             "text": "Ch.14 SWITCH FROM REGULAR TO DIRECT PLANS FAQS",
             "page": 47
         },
         {
+            "level": "H3",
+            "text": "Rules for switching mutual funds:",
+            "page": 47
+        },
+        {
             "level": "H1",
+            "text": "Q. How to switch the regular funds to direct, which I have already bought?",
+            "page": 47
+        },
+        {
+            "level": "H1",
+            "text": "Q. How to stop SIP? What is the process of redemption?",
+            "page": 47
+        },
+        {
+            "level": "H3",
+            "text": "Redemption process:",
+            "page": 48
+        },
+        {
+            "level": "H1",
+            "text": "Q. Can I switch to direct plan of same mutual fund without redeeming so as to escape",
+            "page": 48
+        },
+        {
+            "level": "H3",
+            "text": "exit load and STCG tax before 1 year?",
+            "page": 48
+        },
+        {
+            "level": "H1",
+            "text": "Q. what are the charges/ load/ taxes applied while switching to direct plan?",
+            "page": 48
+        },
+        {
+            "level": "H3",
+            "text": "Q, Is there any option to convert regular plan sip to direct plan sip without redemption?",
+            "page": 48
+        },
+        {
+            "level": "H3",
             "text": "Ch. 15 RETURNS OF MUTUAL FUNDS",
             "page": 49
         },
         {
             "level": "H1",
+            "text": "1. Absolute returns:",
+            "page": 49
+        },
+        {
+            "level": "H1",
+            "text": "2. CAGR (Compounded Annual Growth Rate):",
+            "page": 49
+        },
+        {
+            "level": "H1",
+            "text": "3. Internal Rate of Return (IRR/XIRR):",
+            "page": 49
+        },
+        {
+            "level": "H1",
+            "text": "Q. What is difference between IRR and XIRR? How to calculate?",
+            "page": 50
+        },
+        {
+            "level": "H1",
+            "text": "Q. How to calculate Absolute return and CAGR of my mf investments?",
+            "page": 50
+        },
+        {
+            "level": "H3",
+            "text": "Q: How much should be IRR / XIRR to consider investment is good?",
+            "page": 50
+        },
+        {
+            "level": "H3",
             "text": "Ch. 16 SIP FAQs",
             "page": 52
         },
         {
             "level": "H1",
+            "text": "Q. Which is better? Monthly, weekly or daily SIP?",
+            "page": 52
+        },
+        {
+            "level": "H3",
+            "text": "of mutual funds?",
+            "page": 52
+        },
+        {
+            "level": "H3",
+            "text": "Q How to stop SIP started before?",
+            "page": 52
+        },
+        {
+            "level": "H1",
+            "text": "Q. Any idea about SIP + Term insurance combination? Shall we opt for it?",
+            "page": 53
+        },
+        {
+            "level": "H1",
+            "text": "Q. Why MFU not accepting my SIP date?",
+            "page": 53
+        },
+        {
+            "level": "H3",
             "text": "Ch.17 RISK MANAGEMENT",
             "page": 54
         },
         {
             "level": "H1",
+            "text": "Q. What are 3Ds of risk management?",
+            "page": 54
+        },
+        {
+            "level": "H1",
+            "text": "Q. Timing the market?",
+            "page": 54
+        },
+        {
+            "level": "H3",
+            "text": "How to protect large mutual fund portfolio from market fluctuation?",
+            "page": 54
+        },
+        {
+            "level": "H1",
+            "text": "Q. What % drop in NAV should be significant enough to invest lump sum?",
+            "page": 55
+        },
+        {
+            "level": "H3",
             "text": "Ch.18 INVESTMENT PSYCHOLOGY",
             "page": 56
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Stages of market downtrend.",
+            "page": 56
+        },
+        {
+            "level": "H3",
+            "text": "FEAR & GREED",
+            "page": 56
+        },
+        {
+            "level": "H3",
+            "text": "You can't have it both ways. And yet most of investors try to do all the times. It's an impossible",
+            "page": 57
+        },
+        {
+            "level": "H3",
+            "text": "DEBT Means DEATH",
+            "page": 57
+        },
+        {
+            "level": "H3",
+            "text": "What to do?",
+            "page": 57
+        },
+        {
+            "level": "H3",
+            "text": "Q: Have invested lump sum amount is some balanced funds which were in negative after market",
+            "page": 58
+        },
+        {
+            "level": "H3",
             "text": "Ch. 19 Senior Citizens Investment",
             "page": 59
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "(Dr. Amar Udare)",
+            "page": 59
+        },
+        {
+            "level": "H3",
             "text": "APPENDIX ARTICLES",
             "page": 60
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "■ ■ WEALTHCON GUIDELINES",
+            "page": 60
+        },
+        {
+            "level": "H3",
+            "text": "*Direct Share investment is ultimate goal of Wealthcon*",
+            "page": 60
+        },
+        {
+            "level": "H3",
             "text": "PRIMARY MARKET VS SECONDARY MARKET- Dr Ram",
             "page": 61
         },
         {
-            "level": "H1",
+            "level": "H3",
             "text": "Portfolio Management Services (PMS)",
             "page": 62
         },
         {
-            "level": "H1",
+            "level": "H3",
             "text": "NATIONAL PENSION SCHEME- current understanding",
             "page": 63
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Advantages:",
+            "page": 63
+        },
+        {
+            "level": "H3",
+            "text": "Dr Ram",
+            "page": 63
+        },
+        {
+            "level": "H3",
             "text": "NON-CONVERTIBLE DEBENTURES (NCD) - Wealthcon opinion.",
             "page": 64
         },
         {
-            "level": "H1",
+            "level": "H3",
             "text": "DEBT FUNDS EXPLAINED. (Dr. Amar Udare)",
             "page": 65
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Detailed write up:",
+            "page": 65
+        },
+        {
+            "level": "H3",
+            "text": "COMPOUNDING? Do Stocks and Equity mutual funds have compound effect?",
+            "page": 67
+        },
+        {
+            "level": "H3",
+            "text": "Q: Whether Shares or Equity mutual gives compounding return?",
+            "page": 67
+        },
+        {
+            "level": "H3",
             "text": "GOAL BASED INVESTING",
             "page": 69
         },
         {
-            "level": "H1",
-            "text": "Are mutual funds returns satisfactory?",
-            "page": 72
+            "level": "H3",
+            "text": "2.WEALTH PROTECTION – Debt funds and Arbitrage Fund",
+            "page": 69
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Goal based investing",
+            "page": 70
+        },
+        {
+            "level": "H3",
+            "text": "Goal based investing",
+            "page": 71
+        },
+        {
+            "level": "H3",
             "text": "TAX SAVING OPTIONS UNDER SECTION 80 C- Analysis",
             "page": 72
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Are mutual funds returns satisfactory?",
+            "page": 72
+        },
+        {
+            "level": "H3",
             "text": "Market cap classification",
+            "page": 73
+        },
+        {
+            "level": "H3",
+            "text": "Tiny companies (less than 1000 Cr market cap) -- DO NOT TOUCH companies.",
             "page": 73
         }
     ]

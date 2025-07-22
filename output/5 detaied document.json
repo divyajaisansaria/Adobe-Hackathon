@@ -1,25 +1,25 @@
 {
-    "title": "Past, Present, and Future",
+    "title": "The Evolution of Urban Transportation: Past, Present, and Future Exploring Innovations that Shaped Modern Cities Introduction",
     "outline": [
-        {
-            "level": "H3",
-            "text": "Exploring Innovations that Shaped Modern Cities",
-            "page": 0
-        },
-        {
-            "level": "H1",
-            "text": "Introduction",
-            "page": 0
-        },
         {
             "level": "H2",
             "text": "The Origins of Urban Transportation",
             "page": 0
         },
         {
-            "level": "H2",
-            "text": "Modern Challenges in Urban Transportation",
-            "page": 1
+            "level": "H3",
+            "text": "Ancient and Medieval Transportation",
+            "page": 0
+        },
+        {
+            "level": "H3",
+            "text": "Horse-Drawn Carriages",
+            "page": 0
+        },
+        {
+            "level": "H3",
+            "text": "The Steam Revolution",
+            "page": 0
         },
         {
             "level": "H1",
@@ -27,9 +27,64 @@
             "page": 1
         },
         {
-            "level": "H1",
+            "level": "H3",
+            "text": "Introduction of Motor Vehicles",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "Impact on Urban Planning",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "Public Transportation Systems",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "Modern Challenges in Urban Transportation",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "Tra(cid:431)ic Congestion",
+            "page": 1
+        },
+        {
+            "level": "H3",
+            "text": "Air Quality and Emissions",
+            "page": 2
+        },
+        {
+            "level": "H3",
+            "text": "Equity and Accessibility",
+            "page": 2
+        },
+        {
+            "level": "H2",
             "text": "Future Trends in Urban Transport",
             "page": 2
+        },
+        {
+            "level": "H3",
+            "text": "Electrification of Mobility",
+            "page": 2
+        },
+        {
+            "level": "H3",
+            "text": "Autonomous Vehicles",
+            "page": 2
+        },
+        {
+            "level": "H3",
+            "text": "Smart Cities and Integrated Mobility",
+            "page": 2
+        },
+        {
+            "level": "H3",
+            "text": "Micro-Mobility Solutions",
+            "page": 3
         },
         {
             "level": "H1",

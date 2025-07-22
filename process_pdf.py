@@ -1,209 +1,170 @@
 import os
 import json
+import re
 import pdfplumber
 import numpy as np
 from pathlib import Path
+from collections import Counter
 
-def extract_lines(pdf_path):
-    """Extract lines from the PDF with attributes for heading detection."""
+# --- CONFIGURATION ---
+DEBUG_MODE = False # Set to True for detailed line-by-line scoring logs
+
+def is_junk_line(line_text):
+    """Filters out common non-heading text (page numbers, footers, etc.)."""
+    text = line_text.strip().lower()
+    if re.search(r"^(page\s*\d+|version\s*[\d\.]+|\d+\s*of\s*\d+)", text) or \
+       ("..." in text and len(text.split()) > 3) or \
+       ("copyright" in text or "©" in text or "all rights reserved" in text) or \
+       (text.isnumeric()):
+        return True
+    return False
+
+def get_level_from_structure(text):
+    """
+    Determines heading level based on numbering patterns (e.g., '1.', '1.1', 'A.').
+    This is the most reliable method for structured documents.
+    """
+    text = text.strip()
+    
+    # H4: 1.1.1.1 or a.b.c.d
+    if re.match(r"^\d+\.\d+\.\d+\.\d+(\s|\.)", text) or re.match(r"^[a-z]\.[a-z]\.[a-z]\.[a-z](\s|\.)", text):
+        return "H4"
+    # H3: 1.1.1 or a.b.c
+    if re.match(r"^\d+\.\d+\.\d+(\s|\.)", text) or re.match(r"^[a-z]\.[a-z]\.[a-z](\s|\.)", text):
+        return "H3"
+    # H2: 1.1 or A.1
+    if re.match(r"^\d+\.\d+(\s|\.)", text) or re.match(r"^[A-Z]\.\d+(\s|\.)", text):
+        return "H2"
+    # H1: 1. or A. or Chapter 1
+    if re.match(r"^(chapter|section|part)\s+[IVXLC\d]+", text, re.IGNORECASE) or \
+       re.match(r"^\d+\.\s", text) or re.match(r"^[A-Z]\.\s", text):
+        return "H1"
+        
+    return None # No structural pattern found
+
+def extract_lines_and_features(pdf_path):
+    """Extracts lines and computes features for each line."""
+    # (This function is unchanged)
     with pdfplumber.open(pdf_path) as pdf:
-        all_lines = []
+        all_lines, all_words = [], []
         for page in pdf.pages:
-            words = page.extract_words(extra_attrs=["size", "fontname", "bottom"])
-            # Group words into lines
-            lines = []
-            current_line = []
-            current_top = None
-            for word in sorted(words, key=lambda w: (w["top"], w["x0"])):
-                if current_top is None or abs(word["top"] - current_top) > 2:
-                    if current_line:
-                        line_bottom = max(w["bottom"] for w in current_line)
-                        lines.append({
-                            "page": page.page_number - 1,
-                            "top": current_top,
-                            "bottom": line_bottom,
-                            "text": " ".join(w["text"] for w in current_line),
-                            "font_size": current_line[0]["size"],
-                            "is_bold": any("bold" in w["fontname"].lower() for w in current_line),
-                            "x0": min(w["x0"] for w in current_line),
-                            "x1": max(w["x1"] for w in current_line),
-                            "is_uniform": all(w["size"] == current_line[0]["size"] and w["fontname"] == current_line[0]["fontname"] for w in current_line)
-                        })
-                    current_line = [word]
-                    current_top = word["top"]
-                else:
-                    current_line.append(word)
-            if current_line:
-                line_bottom = max(w["bottom"] for w in current_line)
-                lines.append({
-                    "page": page.page_number - 1,
-                    "top": current_top,
-                    "bottom": line_bottom,
-                    "text": " ".join(w["text"] for w in current_line),
-                    "font_size": current_line[0]["size"],
-                    "is_bold": any("bold" in w["fontname"].lower() for w in current_line),
-                    "x0": min(w["x0"] for w in current_line),
-                    "x1": max(w["x1"] for w in current_line),
-                    "is_uniform": all(w["size"] == current_line[0]["size"] and w["fontname"] == current_line[0]["fontname"] for w in current_line)
-                })
-            
-            # Sort lines by top and compute gaps
-            lines.sort(key=lambda l: l["top"])
-            for i, line in enumerate(lines):
-                if i == 0:
-                    line["gap"] = line["top"]
-                else:
-                    line["gap"] = line["top"] - lines[i-1]["bottom"]
-            
-            all_lines.extend(lines)
-        
-        # Compute global statistics
-        all_font_sizes = [line["font_size"] for line in all_lines]
-        median_font_size = np.median(all_font_sizes) if all_font_sizes else 0
-        
-        # Count frequency of each font size
-        font_size_counts = {}
-        for fs in all_font_sizes:
-            font_size_counts[fs] = font_size_counts.get(fs, 0) + 1
-        
-        total_lines = len(all_lines)
-        
-        # Add attributes to each line
+            all_words.extend(page.extract_words(extra_attrs=["size", "fontname"]))
+        if not all_words: return [], {}
+        font_sizes = [w["size"] for w in all_words]
+        doc_stats = { "most_common_font_size": Counter(font_sizes).most_common(1)[0][0] }
+        for page in pdf.pages:
+            page_words = sorted(page.extract_words(extra_attrs=["size", "fontname", "bottom"]), key=lambda w: (w["top"], w["x0"]))
+            if not page_words: continue
+            current_line, current_top = [], page_words[0]["top"]
+            for word in page_words:
+                if abs(word["top"] - current_top) > 2:
+                    if current_line: all_lines.append(build_line_object(current_line, page))
+                    current_line, current_top = [word], word["top"]
+                else: current_line.append(word)
+            if current_line: all_lines.append(build_line_object(current_line, page))
         for i, line in enumerate(all_lines):
-            page = pdf.pages[line["page"]]
-            line["word_count"] = len(line["text"].split())
-            line["is_near_top"] = line["top"] < page.height * 0.2
-            center = page.width / 2
-            line_center = (line["x0"] + line["x1"]) / 2
-            line["is_centered"] = abs(line_center - center) < page.width * 0.1
-            fs = line["font_size"]
-            line["fs_frequency"] = font_size_counts[fs] / total_lines if total_lines > 0 else 0
-            # Check if next line continues the text (indicating content)
-            line["is_followed_closely"] = (i + 1 < len(all_lines) and 
-                                          all_lines[i+1]["page"] == line["page"] and 
-                                          all_lines[i+1]["top"] - line["bottom"] < 10 and 
-                                          abs(all_lines[i+1]["font_size"] - line["font_size"]) < 1)
-        
-        first_page_height = pdf.pages[0].height if pdf.pages else 0
-        return all_lines, median_font_size, first_page_height
+            prev_line_bottom = all_lines[i-1]["bottom"] if i > 0 and all_lines[i-1]["page"] == line["page"] else 0
+            line["gap_before"] = line["top"] - prev_line_bottom
+    return all_lines, doc_stats
 
-def merge_title_lines(candidates):
-    """Merge consecutive title lines with similar properties, allowing 2-3 lines."""
-    if not candidates:
-        return "", []
-    candidates.sort(key=lambda l: l["top"])
-    title_lines = [candidates[0]]
-    prev_line = candidates[0]
-    max_lines = 3  # Limit title to 3 lines max
-    for line in candidates[1:]:
-        if (len(title_lines) < max_lines and
-            abs(line["font_size"] - prev_line["font_size"]) < 1 and 
-            line["top"] - prev_line["bottom"] < 20 and 
-            not line["is_followed_closely"]):
-            title_lines.append(line)
-            prev_line = line
-        else:
-            break
-    title_text = " ".join(line["text"] for line in title_lines)
-    return title_text, title_lines
+def build_line_object(words, page):
+    """Helper function to create a line dictionary."""
+    # (This function is unchanged)
+    text = " ".join(w["text"] for w in words); sizes = [w["size"] for w in words]; names = [w["fontname"] for w in words]
+    return { "text": text, "page": page.page_number - 1, "top": words[0]["top"], "bottom": max(w["bottom"] for w in words),
+        "font_size": np.mean(sizes), "is_bold": any("bold" in name.lower() for name in names), "word_count": len(words), }
 
-def classify_headings(lines, median_font_size, first_page_height):
-    """Classify lines into Title, H1, H2, H3 with improved hierarchy and limits."""
-    # Identify content-like font sizes (used in >20% of lines)
-    total_lines = len(lines)
-    font_size_freq = {}
+def score_headings(lines, doc_stats):
+    """Scores lines using a system that heavily penalizes junk text."""
+    # (This function is unchanged)
+    scored_lines = []
+    if not lines: return []
+    body_font_size = doc_stats["most_common_font_size"]
     for line in lines:
-        fs = line["font_size"]
-        font_size_freq[fs] = font_size_freq.get(fs, 0) + 1
-    content_font_sizes = {fs for fs, count in font_size_freq.items() if count / total_lines > 0.2}
+        if is_junk_line(line["text"]): continue
+        score = 0
+        if line["font_size"] > body_font_size * 1.15: score += 20
+        if line["is_bold"]: score += 15
+        if line["gap_before"] > line["font_size"] * 1.5: score += 15
+        if line["word_count"] <= 12: score += 10
+        if line["word_count"] > 20: score -= 15
+        if score > 25: line["score"] = score; scored_lines.append(line)
+    return scored_lines
 
-    # Filter potential headings with stricter criteria
-    potential_headings = []
-    for line in lines:
-        if (line["is_uniform"] and 
-            line["font_size"] not in content_font_sizes and
-            line["word_count"] < 10 and
-            (line["font_size"] > median_font_size * 1.2 or line["is_bold"] or line["is_centered"]) and
-            (line["gap"] > 20 or line["is_near_top"]) and
-            line["fs_frequency"] < 0.1 and
-            not line["is_followed_closely"]):
-            potential_headings.append(line)
-    
-    # Detect title on first page (up to 3 lines)
-    title_candidates = [line for line in potential_headings if line["page"] == 0 and line["is_near_top"]]
-    title_text, title_lines = merge_title_lines(title_candidates)
-    
-    # Remove title lines from potential headings
-    potential_headings = [h for h in potential_headings if h not in title_lines]
-    
-    # Fallback: if no title, use first line of first page
-    if not title_text and lines and lines[0]["page"] == 0:
-        title_text = lines[0]["text"]
-    
-    # Group headings by page and enforce 4-5 headings per page
-    headings_by_page = {}
-    for h in potential_headings:
-        page = h["page"]
-        if page not in headings_by_page:
-            headings_by_page[page] = []
-        headings_by_page[page].append(h)
+def classify_and_build_outline(potential_headings, all_lines):
+    """
+    Classifies headings using a hybrid "Structure > Appearance" model
+    and improved multi-line title merging.
+    """
+    if not potential_headings:
+        title_text = all_lines[0]["text"] if all_lines else "No Title Found"
+        return [], title_text
+
+    # --- Improved Multi-Line Title Merging ---
+    title_candidates = sorted([h for h in potential_headings if h["page"] == 0 and h["top"] < 200], key=lambda x: x['top'])
+    title_text, title_lines = "", []
+    if title_candidates:
+        primary_title_line = max(title_candidates, key=lambda x: x['score'])
+        title_lines.append(primary_title_line)
+        # More aggressive merging: merge nearby high-scoring lines into the title
+        for cand in title_candidates:
+            if cand not in title_lines and abs(cand['top'] - title_lines[-1]['bottom']) < 25:
+                title_lines.append(cand)
+        title_lines.sort(key=lambda x: x['top'])
+        title_text = " ".join(line["text"] for line in title_lines)
+
+    # --- Hybrid Heading Classification ---
+    title_texts = {line['text'] for line in title_lines}
+    headings_to_classify = [h for h in potential_headings if h['text'] not in title_texts]
     
     outline = []
-    for page, page_headings in headings_by_page.items():
-        # Sort by position (top) to maintain H1 > H2 > H3 order
-        page_headings.sort(key=lambda h: h["top"])
-        
-        # Limit to 5 headings per page
-        page_headings = page_headings[:5]
-        
-        # Get unique font sizes in descending order
-        heading_font_sizes = sorted(set(h["font_size"] for h in page_headings), reverse=True)
-        
-        # Map font sizes to levels: H1 (largest), H2 (next), H3 (others)
+    unclassified_by_structure = []
+
+    # 1. First pass: Classify by structural patterns (most reliable)
+    for h in headings_to_classify:
+        level = get_level_from_structure(h['text'])
+        if level:
+            outline.append({"level": level, "text": h["text"].strip(), "page": h["page"]})
+        else:
+            unclassified_by_structure.append(h)
+
+    # 2. Second pass: Classify remaining by appearance (fallback)
+    if unclassified_by_structure:
+        fallback_styles = sorted(list(set((h["font_size"], h["is_bold"]) for h in unclassified_by_structure)), key=lambda x: x[0], reverse=True)
         level_map = {}
-        if heading_font_sizes:
-            level_map[heading_font_sizes[0]] = "H1"
-            if len(heading_font_sizes) > 1:
-                level_map[heading_font_sizes[1]] = "H2"
-            for fs in heading_font_sizes[2:]:
-                level_map[fs] = "H3"
+        # Avoid demoting to H2/H3 if H1 was already found via structure
+        h1_found = any(o['level'] == 'H1' for o in outline)
+        if fallback_styles and not h1_found: level_map[fallback_styles[0]] = "H1"
+        if len(fallback_styles) > 1: level_map[fallback_styles[1 if not h1_found else 0]] = "H2"
+        for style in fallback_styles[2 if not h1_found else 1:]: level_map[style] = "H3"
         
-        # Assign levels, adjusting with gaps and position
-        for i, h in enumerate(page_headings):
-            fs = h["font_size"]
-            level = level_map.get(fs, "H3")
-            # Promote based on gap or position
-            if h["gap"] > 30 and level != "H1" and i < 2:  # First two can be H1/H2
-                level = "H1" if i == 0 else "H2"
-            outline.append({
-                "level": level,
-                "text": h["text"],
-                "page": h["page"]
-            })
+        for h in unclassified_by_structure:
+            style = (h["font_size"], h["is_bold"])
+            level = level_map.get(style, "H3") # Default to H3
+            outline.append({"level": level, "text": h["text"].strip(), "page": h["page"]})
+
+    # Sort final outline by page and position
+    line_positions = {line['text']: i for i, line in enumerate(all_lines)}
+    outline.sort(key=lambda x: (x["page"], line_positions.get(x['text'], 0)))
     
-    # Sort outline by page and position
-    outline.sort(key=lambda x: (x["page"], x["text"]))
-    
-    return outline, title_text
+    return outline, title_text.strip()
 
 def process_pdfs(input_dir, output_dir):
-    """Process PDFs and save heading outlines as JSON."""
+    """Main processing loop."""
+    # (This function is unchanged)
     os.makedirs(output_dir, exist_ok=True)
-    
     for pdf_file in Path(input_dir).glob("*.pdf"):
-        print(f"Processing {pdf_file}")
-        lines, median_font_size, first_page_height = extract_lines(pdf_file)
-        outline, title = classify_headings(lines, median_font_size, first_page_height)
-        
-        output = {
-            "title": title,
-            "outline": outline
-        }
-        
-        output_path = os.path.join(output_dir, f"{pdf_file.stem}.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(output, f, indent=4, ensure_ascii=False)
-        print(f"Saved output to {output_path}")
+        print(f"\nProcessing {pdf_file.name}...")
+        lines, doc_stats = extract_lines_and_features(pdf_file)
+        if not lines: print("  -> Document is empty. Skipping."); continue
+        potential_headings = score_headings(lines, doc_stats)
+        outline, title = classify_and_build_outline(potential_headings, lines)
+        print(f"    - Detected Title: '{title}'")
+        print(f"    - Generated outline with {len(outline)} headings.")
+        output = {"title": title, "outline": outline}
+        output_path = Path(output_dir) / f"{pdf_file.stem}.json"
+        with open(output_path, "w", encoding="utf-8") as f: json.dump(output, f, indent=4, ensure_ascii=False)
+        print(f"  -> ✅ Saved output to {output_path}")
 
 def main():
     input_dir = "/app/input"
