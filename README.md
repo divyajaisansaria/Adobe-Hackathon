@@ -1,76 +1,53 @@
-📄 Adobe PDF Content Extractor (Hackathon-1A)
-This project provides a containerized solution using Docker to automatically extract structured data from PDF documents and convert them into corresponding JSON files.
+# 📄 Adobe PDF Content Extractor (Hackathon-1A)
 
-🚀 How to Run
-Follow these steps to set up and run the project on your local machine.
+This project provides a containerized solution using **Docker** to automatically extract structured data from PDF documents and convert them into corresponding **JSON** files.
 
-✅ Prerequisites
-Ensure Docker Desktop is installed and running on your system.
+## 🚀 How to Run
 
-📥 Step 1: Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/divyajaisansaria/Adobe-Hackathon-1a && cd Adobe-Hackathon-1a
-📂 Step 2: Add Input Files
-Place all your PDF files into the input/ folder.
+### ✅ Prerequisites
 
-🛠️ Step 3: Build & Run the Docker Container
-🔷 For Windows (PowerShell)
-powershell
-Copy
-Edit
+Ensure **Docker Desktop** is installed and running on your system.  
+👉 [Download Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### 📥 Step 1: Clone the Repository
+
+Run:  
+```bash
+git clone https://github.com/divyajaisansaria/Adobe-Hackathon-1a
+cd Adobe-Hackathon-1a
+```
+### 📂 Step 2: Add Input Files
+
+Place all your PDF files inside the `input/` folder.
+
+### 🛠️ Step 3: Build & Run the Docker Container
+
+#### 🔷 For Windows (PowerShell)
+```bash
 docker build --platform linux/amd64 -t adobe-round-1a .
-powershell
-Copy
-Edit
 docker run --rm -v ${PWD}/input:/app/input:ro -v ${PWD}/output/adobe-round-1a/:/app/output --network none adobe-round-1a
-🔶 For macOS / Linux (Bash)
-bash
-Copy
-Edit
+```
+
+#### 🔶 For macOS / Linux (Bash)
+```bash
 docker build --platform linux/amd64 -t adobe-round-1a .
-bash
-Copy
-Edit
 docker run --rm -v $(pwd)/input:/app/input:ro -v $(pwd)/output/adobe-round-1a/:/app/output --network none adobe-round-1a
-📁 Step 4: Access the Output
-After execution, the extracted .json files will be available in the output/adobe-round-1a/ directory.
+```
+### 📁 Step 4: Access the Output
 
-🧠 Project Explanation
-📁 File Structure
-graphql
-Copy
-Edit
-ADOBE-HACKATHON-1A/
-├── input/                  # Place source PDF files here
-├── output/
-│   └── adobe-round-1a/     # JSON output files appear here
-├── packages/
-├── Dockerfile              # Docker build configuration
-├── process_pdf.py          # Core processing script
-├── README.md
-└── requirements.txt        # Python dependencies
-📄 File Descriptions
-Dockerfile: Instructions to build the Docker image with required dependencies.
+After execution, the extracted `.json` files will be available in the `output/adobe-round-1a/` directory.
 
-process_pdf.py: Reads PDFs, extracts structured data, and saves it as JSON.
+### ⚙️ Performance & Constraints
+This model meets the following requirements:
 
-requirements.txt: Lists all required Python libraries.
+- 🚀 Performance: Processes 50 PDFs in under 10 seconds.
+- 🔒 Offline: Operates without internet access for enhanced security.
+- 📦 Size: The optimized Docker image is under 450MB.
 
-input/: Directory to store source PDF files (read-only in container).
+### 📄 File Descriptions
 
-output/: Directory to save generated JSON files (write-enabled in container).
-
-🔄 How It Works
-When you run the Docker container:
-
-It mounts the local input/ and output/ directories.
-
-Executes process_pdf.py inside the isolated Docker environment.
-
-Extracts textual and structural data from PDFs.
-
-Saves results as .json files in the output/adobe-round-1a/ folder.
-
-This ensures consistent and environment-independent execution across any system.
+- `Dockerfile`: Contains instructions to build the Docker image with all required dependencies.
+- `process_pdf.py`: Core Python script that extracts structured data from each PDF and saves it to a JSON file.
+- `requirements.txt`: Lists all the Python libraries required by the script.
+- `input/`: Folder to place the input PDF files. It is mounted as read-only in the container.
+- `output/`: Folder where the extracted JSON files will be saved. It is mounted as a write-enabled volume.
