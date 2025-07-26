@@ -130,7 +130,6 @@ def process_pdfs(input_dir, output_dir):
                 continue
             potential_headings = score_headings(lines, doc_stats)
             
-            # The variable 'lines' is passed here, fixing the NameError
             outline, title = classify_and_build_outline(potential_headings, lines)
             
             output = {"title": title, "outline": outline}
