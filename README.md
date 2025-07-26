@@ -45,6 +45,17 @@ docker run --rm -v $(pwd)/input:/app/input:ro -v $(pwd)/output/adobe-round-1a/:/
 
 After execution, the extracted `.json` files will be available in the `output/adobe-round-1a/` directory.
 
+### 🧠 Project Explanation
+
+This project offers an efficient, offline solution for extracting a structured table of contents from PDFs. It uses a **layout-aware, rule-based engine** to analyze document structure without relying on machine learning models, ensuring high speed and low resource usage.
+
+The pipeline works in several stages:
+
+1.  **Parsing & Feature Extraction:** It uses `pdfplumber` to extract text lines along with their visual properties (font size, boldness, spacing).
+2.  **Heading Scoring:** Lines are scored based on visual cues. Lines with larger fonts, bold styling, and significant spacing above them are identified as potential headings, while junk lines (like page numbers) are filtered out.
+3.  **Hierarchical Classification:** A dual-pass engine classifies headings. It first looks for structural patterns (e.g., `1.1`, `Section A`). For remaining headings, it uses a stylistic fallback, assigning levels based on font size and weight.
+4.  **JSON Output:** The final document title and hierarchical outline are saved as a structured JSON file.
+
 ### ⚙️ Performance & Constraints
 This model meets the following requirements:
 
