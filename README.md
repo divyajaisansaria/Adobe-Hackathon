@@ -25,13 +25,21 @@ Place all your PDF files inside the `input/` folder.
 #### 🔷 For Windows (PowerShell)
 ```bash
 docker build --platform linux/amd64 -t adobe-round-1a .
+
+```
+```bash
 docker run --rm -v ${PWD}/input:/app/input:ro -v ${PWD}/output/adobe-round-1a/:/app/output --network none adobe-round-1a
+
 ```
 
 #### 🔶 For macOS / Linux (Bash)
 ```bash
 docker build --platform linux/amd64 -t adobe-round-1a .
+
+```
+```bash
 docker run --rm -v $(pwd)/input:/app/input:ro -v $(pwd)/output/adobe-round-1a/:/app/output --network none adobe-round-1a
+
 ```
 ### 📁 Step 4: Access the Output
 
